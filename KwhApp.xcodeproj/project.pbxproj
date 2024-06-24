@@ -14,6 +14,10 @@
 		0BD234CB2C1650D90004482A /* KwhAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD234CA2C1650D90004482A /* KwhAppTests.swift */; };
 		0BD234D52C1650D90004482A /* KwhAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD234D42C1650D90004482A /* KwhAppUITests.swift */; };
 		0BD234D72C1650D90004482A /* KwhAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD234D62C1650D90004482A /* KwhAppUITestsLaunchTests.swift */; };
+		0BE3D7342C28A48600D4826F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE3D7332C28A48600D4826F /* MainView.swift */; };
+		0BE3D7362C28A5D900D4826F /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE3D7352C28A5D900D4826F /* SecondView.swift */; };
+		0BE3D73A2C28B98F00D4826F /* ChartVista.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE3D7392C28B98F00D4826F /* ChartVista.swift */; };
+		0BFA55FB2C25F11600167678 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA55FA2C25F11600167678 /* ApiService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		0BD234D02C1650D90004482A /* KwhAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KwhAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BD234D42C1650D90004482A /* KwhAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KwhAppUITests.swift; sourceTree = "<group>"; };
 		0BD234D62C1650D90004482A /* KwhAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KwhAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0BE3D7332C28A48600D4826F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		0BE3D7352C28A5D900D4826F /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
+		0BE3D7392C28B98F00D4826F /* ChartVista.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartVista.swift; sourceTree = "<group>"; };
+		0BFA55FA2C25F11600167678 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,9 +103,11 @@
 			isa = PBXGroup;
 			children = (
 				0BD234B92C1650D70004482A /* KwhAppApp.swift */,
-				0BD234BB2C1650D70004482A /* ContentView.swift */,
+				0BE3D7382C28B96F00D4826F /* Vistas */,
 				0BD234BD2C1650D90004482A /* Assets.xcassets */,
 				0BD234BF2C1650D90004482A /* Preview Content */,
+				0BE3D7372C28A75C00D4826F /* PrecioApi */,
+				0BE3D7352C28A5D900D4826F /* SecondView.swift */,
 			);
 			path = KwhApp;
 			sourceTree = "<group>";
@@ -125,6 +135,24 @@
 				0BD234D62C1650D90004482A /* KwhAppUITestsLaunchTests.swift */,
 			);
 			path = KwhAppUITests;
+			sourceTree = "<group>";
+		};
+		0BE3D7372C28A75C00D4826F /* PrecioApi */ = {
+			isa = PBXGroup;
+			children = (
+				0BFA55FA2C25F11600167678 /* ApiService.swift */,
+			);
+			path = PrecioApi;
+			sourceTree = "<group>";
+		};
+		0BE3D7382C28B96F00D4826F /* Vistas */ = {
+			isa = PBXGroup;
+			children = (
+				0BE3D7392C28B98F00D4826F /* ChartVista.swift */,
+				0BD234BB2C1650D70004482A /* ContentView.swift */,
+				0BE3D7332C28A48600D4826F /* MainView.swift */,
+			);
+			path = Vistas;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,7 +219,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					0BD234B52C1650D70004482A = {
 						CreatedOnToolsVersion = 15.4;
@@ -257,7 +285,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BFA55FB2C25F11600167678 /* ApiService.swift in Sources */,
+				0BE3D7362C28A5D900D4826F /* SecondView.swift in Sources */,
+				0BE3D7342C28A48600D4826F /* MainView.swift in Sources */,
 				0BD234BC2C1650D70004482A /* ContentView.swift in Sources */,
+				0BE3D73A2C28B98F00D4826F /* ChartVista.swift in Sources */,
 				0BD234BA2C1650D70004482A /* KwhAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,6 +462,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,6 +492,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -475,7 +509,6 @@
 		0BD234DE2C1650D90004482A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -495,7 +528,6 @@
 		0BD234DF2C1650D90004482A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -515,7 +547,6 @@
 		0BD234E12C1650D90004482A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WD63278WHC;
@@ -533,7 +564,6 @@
 		0BD234E22C1650D90004482A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = WD63278WHC;
