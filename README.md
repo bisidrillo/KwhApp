@@ -22,7 +22,7 @@ Electricity Price Viewer es una aplicación de iOS desarrollada con SwiftUI que 
 
 1. Clona este repositorio en tu máquina local:
     ```sh
-    git clone https://github.com/tu-usuario/electricity-price-viewer.git
+    git clone https://github.com/bisidrillo/electricity-price-viewer.git
     ```
 
 2. Abre el proyecto en Xcode:
