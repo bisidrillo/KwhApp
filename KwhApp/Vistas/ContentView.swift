@@ -32,7 +32,7 @@ struct ContentView: View {
             }
             .navigationTitle(electricityPrices.first.map { "\($0.date)" } ?? "Precios de la Luz")
             .onAppear {
-                fetchElectricityPrice { result in
+                ApiService.fetchElectricityPrice { result in
                     switch result {
                     case .success(let prices):
                         electricityPrices = prices
