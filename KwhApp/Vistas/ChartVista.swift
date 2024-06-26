@@ -45,6 +45,7 @@ struct ChartVista: View {
                 }
                 
             } else {
+                
                 Chart {
                     ForEach(electricityPrices.sorted(by: { $0.hour < $1.hour }))  { data in
                         LineMark(
@@ -63,8 +64,8 @@ struct ChartVista: View {
                         .foregroundStyle(.orange.opacity(0.3))
                     }
                 }
-                .chartYScale(domain: 0...1) //ajusta el domino de los datos
-                .frame(height: 300)
+                .chartYScale(domain: 0...0.4) //ajusta el domino de los datos
+                .frame(height: 250)
                 .padding()
                 Spacer()
             }
