@@ -6,16 +6,33 @@ struct ChartData: Identifiable {
     let hour: String
     let price: Double
 }
+enum TimeRange: String, CaseIterable, Identifiable {
+    case day = "Dia"
+    case week = "Semana"
+    case sixMounts = "6 Meses"
+    case yeat = "Año"
+    
+    
+    var id: String { self.rawValue }
+}
 
 struct ChartVista: View {
     @State private var statusMessage: String = "Conectando a la API..."
     @State private var electricityPrices: [ChartData] = []
+    @State private var selectedTimeRange: TimeRange = .day
 
     var body: some View {
         VStack {
             Text("Precio de la luz por Hora")
-                .font(.title)
+                .font(.title3)
                 .padding()
+            Picker("Rango de tiempo", selection: $selectedTimeRange) {
+                ForEach(TimeRange.allCases) { range in
+                    Text(range.rawValue).tag(range)
+                }
+            }
+            .pickerStyle(SegmentedPickerStyle())
+            .padding()
 
             if electricityPrices.isEmpty {
                 if statusMessage == "Conectando a la API..." {
@@ -35,22 +52,24 @@ struct ChartVista: View {
                         .padding()
                 }
             } else {
-                Chart {
-                    ForEach(electricityPrices.sorted(by: { $0.hour < $1.hour })) { data in
-                        LineMark(
-                            x: .value("Hora", data.hour),
-                            y: .value("Precio", data.price)
-                        )
-                        .interpolationMethod(.catmullRom)
-                        .foregroundStyle(.orange)
-                        .symbol(Circle())
-                        
-                        AreaMark(
-                            x: .value("Hora", data.hour),
-                            y: .value("Precio", data.price)
-                        )
-                        .interpolationMethod(.catmullRom)
-                        .foregroundStyle(.orange.opacity(0.3))
+                GroupBox{
+                    Chart {
+                        ForEach(electricityPrices.sorted(by: { $0.hour < $1.hour })) { data in
+                            LineMark(
+                                x: .value("Hora", data.hour),
+                                y: .value("Precio", data.price)
+                            )
+                            .interpolationMethod(.catmullRom)
+                            .foregroundStyle(.orange)
+                            .symbol(Circle())
+                            
+                            AreaMark(
+                                x: .value("Hora", data.hour),
+                                y: .value("Precio", data.price)
+                            )
+                            .interpolationMethod(.catmullRom)
+                            .foregroundStyle(.orange.opacity(0.3))
+                        }
                     }
                 }
                 .chartYScale(domain: 0...0.4) // Ajusta el dominio de los datos

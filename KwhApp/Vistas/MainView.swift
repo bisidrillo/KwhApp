@@ -14,11 +14,13 @@ struct MainView: View {
                 .tabItem {
                     Image(systemName: "bolt.fill")
                     Text("Precios")
+                     
+                
                 }
             ChartVista()
                 .tabItem {
                     Image(systemName: "chart.bar.xaxis.ascending.badge.clock.rtl")
-                    Text("")
+                    Text("Grafico")
                 }
         }
     }
