@@ -11,6 +11,7 @@
 		0B1B2EAF2C2DF81D003738F5 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1B2EAE2C2DF81D003738F5 /* ApiService.swift */; };
 		0B1B2EB22C2DF937003738F5 /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1B2EB12C2DF937003738F5 /* ChartViewModel.swift */; };
 		0B1B2EB42C2DFD8B003738F5 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1B2EB32C2DFD8B003738F5 /* ContentViewModel.swift */; };
+		0BCE9BC92C2E127D00AA9094 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0BCE9BC82C2E127D00AA9094 /* README.md */; };
 		0BD234BA2C1650D70004482A /* KwhAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD234B92C1650D70004482A /* KwhAppApp.swift */; };
 		0BD234BC2C1650D70004482A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD234BB2C1650D70004482A /* ContentView.swift */; };
 		0BD234BE2C1650D90004482A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BD234BD2C1650D90004482A /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 		0B1B2EAE2C2DF81D003738F5 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		0B1B2EB12C2DF937003738F5 /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
 		0B1B2EB32C2DFD8B003738F5 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		0BCE9BC82C2E127D00AA9094 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0BD234B62C1650D70004482A /* KwhApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KwhApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BD234B92C1650D70004482A /* KwhAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KwhAppApp.swift; sourceTree = "<group>"; };
 		0BD234BB2C1650D70004482A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				0BD234C92C1650D90004482A /* KwhAppTests */,
 				0BD234D32C1650D90004482A /* KwhAppUITests */,
 				0BD234B72C1650D70004482A /* Products */,
+				0BCE9BC82C2E127D00AA9094 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -284,6 +287,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BCE9BC92C2E127D00AA9094 /* README.md in Resources */,
 				0BD234C12C1650D90004482A /* Preview Assets.xcassets in Resources */,
 				0BD234BE2C1650D90004482A /* Assets.xcassets in Resources */,
 			);

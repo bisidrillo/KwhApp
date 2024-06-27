@@ -49,3 +49,23 @@ ElectricityPriceViewer
 ├── ContentView.swift                // Muestra la lista de precios de la electricidad
 ├── SecondView.swift                 // Muestra el gráfico de precios de la electricidad
 └── ApiService.swift                 // Maneja la obtención de datos de la API
+
+
+# actualizacion 27/06/24
+
+# KwhApp
+
+KwhApp es una aplicación de SwiftUI que muestra los precios de la electricidad en función de datos obtenidos de una API. Está estructurada utilizando la arquitectura MVVM (Model-View-ViewModel).
+
+## Características
+
+- Mostrar precios de la electricidad por hora.
+- Gráfico interactivo para visualizar los precios a lo largo del tiempo.
+- Selector de rango de tiempo (día, semana, 6 meses, año).
+
+## Arquitectura
+
+El proyecto sigue la arquitectura MVVM:
+- **Model**: `ElectricityPrice`
+- **ViewModel**: `ChartViewModel`, `ContentViewModel`
+- **View**: `ChartView`, `ContentView`, `MainView`, `SecondView`
