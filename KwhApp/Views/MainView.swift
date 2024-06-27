@@ -14,10 +14,8 @@ struct MainView: View {
                 .tabItem {
                     Image(systemName: "bolt.fill")
                     Text("Precios")
-                     
-                
                 }
-            ChartVista()
+            ChartView()
                 .tabItem {
                     Image(systemName: "chart.bar.xaxis.ascending.badge.clock.rtl")
                     Text("Grafico")
@@ -26,6 +24,10 @@ struct MainView: View {
     }
 }
 
-#Preview {
-    MainView()
+struct MainView_Previews: PreviewProvider {
+    static var previews: some View {
+        MainView()
+        
+        
+    }
 }

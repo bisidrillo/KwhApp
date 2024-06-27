@@ -1,17 +1,16 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var statusMessage: String = "Conectando a la API..."
-    @State private var electricityPrices: [ElectricityPrice] = []
+    @StateObject private var viewModel = ContentViewModel()
 
     var body: some View {
         NavigationView {
             VStack {
-                if electricityPrices.isEmpty {
-                    Text(statusMessage)
+                if viewModel.electricityPrices.isEmpty {
+                    Text(viewModel.statusMessage)
                         .padding()
                 } else {
-                    List(electricityPrices.sorted(by: { $0.hour < $1.hour }), id:  \.id ) { price in
+                    List(viewModel.electricityPrices.sorted(by: { $0.hour < $1.hour }), id: \.id) { price in
                         HStack {
                             Image(systemName: "eurosign.arrow.trianglehead.counterclockwise.rotate.90")
                                 .resizable()
@@ -30,17 +29,9 @@ struct ContentView: View {
                     }
                 }
             }
-            .navigationTitle(electricityPrices.first.map { "\($0.date)" } ?? "Precios de la Luz")
+            .navigationTitle(viewModel.electricityPrices.first.map { "\($0.date)" } ?? "Precios de la Luz")
             .onAppear {
-                ApiService.fetchElectricityPrice { result in
-                    switch result {
-                    case .success(let prices):
-                        electricityPrices = prices
-                        statusMessage = "Datos cargados correctamente."
-                    case .failure(let error):
-                        statusMessage = "Error: \(error.localizedDescription)"
-                    }
-                }
+                viewModel.fetchElectricityPrice()
             }
         }
     }

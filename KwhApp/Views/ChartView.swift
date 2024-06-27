@@ -6,27 +6,25 @@ struct ChartData: Identifiable {
     let hour: String
     let price: Double
 }
+
 enum TimeRange: String, CaseIterable, Identifiable {
-    case day = "Dia"
+    case day = "Día"
     case week = "Semana"
-    case sixMounts = "6 Meses"
-    case yeat = "Año"
-    
+    case sixMonths = "6 Meses"
+    case year = "Año"
     
     var id: String { self.rawValue }
 }
 
-struct ChartVista: View {
-    @State private var statusMessage: String = "Conectando a la API..."
-    @State private var electricityPrices: [ChartData] = []
-    @State private var selectedTimeRange: TimeRange = .day
+struct ChartView: View {
+    @StateObject private var viewModel = ChartViewModel()
 
     var body: some View {
         VStack {
             Text("Precio de la luz por Hora")
                 .font(.title3)
                 .padding()
-            Picker("Rango de tiempo", selection: $selectedTimeRange) {
+            Picker("Rango de tiempo", selection: $viewModel.selectedTimeRange) {
                 ForEach(TimeRange.allCases) { range in
                     Text(range.rawValue).tag(range)
                 }
@@ -34,13 +32,13 @@ struct ChartVista: View {
             .pickerStyle(SegmentedPickerStyle())
             .padding()
 
-            if electricityPrices.isEmpty {
-                if statusMessage == "Conectando a la API..." {
+            if viewModel.electricityPrices.isEmpty {
+                if viewModel.statusMessage == "Conectando a la API..." {
                     TimelineView(.animation) { context in
                         let currentTime = context.date.timeIntervalSinceReferenceDate
                         let progress = currentTime.truncatingRemainder(dividingBy: 1)
                         VStack {
-                            Text(statusMessage)
+                            Text(viewModel.statusMessage)
                             ProgressView(value: progress)
                                 .progressViewStyle(CircularProgressViewStyle(tint: .orange))
                                 .scaleEffect(1.5)
@@ -48,13 +46,13 @@ struct ChartVista: View {
                         }
                     }
                 } else {
-                    Text(statusMessage)
+                    Text(viewModel.statusMessage)
                         .padding()
                 }
             } else {
-                GroupBox{
+                GroupBox {
                     Chart {
-                        ForEach(electricityPrices.sorted(by: { $0.hour < $1.hour })) { data in
+                        ForEach(viewModel.electricityPrices.sorted(by: { $0.hour < $1.hour })) { data in
                             LineMark(
                                 x: .value("Hora", data.hour),
                                 y: .value("Precio", data.price)
@@ -72,17 +70,17 @@ struct ChartVista: View {
                         }
                     }
                 }
-                .chartYScale(domain: 0...0.4) // Ajusta el dominio de los datos
+                .chartYScale(domain: 0...0.4)
                 .chartYAxis {
                     AxisMarks(values: .stride(by: 0.1)) { value in
                         AxisGridLine()
-                            .foregroundStyle(.blue) // Cambia el color de las líneas de la cuadrícula a azul
+                            .foregroundStyle(.blue)
                         AxisTick()
-                            .foregroundStyle(.blue) // Cambia el color de las marcas de tic a azul
+                            .foregroundStyle(.blue)
                         AxisValueLabel() {
                             if let price = value.as(Double.self) {
                                 Text("\(price, specifier: "%.1f")")
-                                    .foregroundColor(.blue) // Cambia el color de las etiquetas a azul
+                                    .foregroundColor(.blue)
                             }
                         }
                     }
@@ -90,10 +88,9 @@ struct ChartVista: View {
                 .chartXAxis {
                     AxisMarks(values: .automatic) { _ in
                         AxisGridLine()
-                            .foregroundStyle(.blue) // Cambia el color de las líneas de la cuadrícula a azul
+                            .foregroundStyle(.blue)
                         AxisTick()
-                            .foregroundStyle(.blue) // Cambia el color de las marcas de tic a azul
-                        
+                            .foregroundStyle(.blue)
                     }
                 }
                 .frame(height: 250)
@@ -103,23 +100,13 @@ struct ChartVista: View {
         }
         .navigationTitle("Gráfico")
         .onAppear {
-            ApiService.fetchElectricityPrice { result in
-                switch result {
-                case .success(let prices):
-                    electricityPrices = prices.map {
-                        ChartData(hour: $0.hour, price: $0.pricePerKWh)
-                    }
-                    statusMessage = "Datos cargados correctamente"
-                case .failure(let error):
-                    statusMessage = "Error: \(error.localizedDescription)"
-                }
-            }
+            viewModel.fetchElectricityPrice()
         }
     }
 }
 
-struct ChartVista_Previews: PreviewProvider {
+struct ChartView_Previews: PreviewProvider {
     static var previews: some View {
-        ChartVista()
+        ChartView()
     }
 }

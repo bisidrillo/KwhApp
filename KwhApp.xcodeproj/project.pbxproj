@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B1B2EAC2C2DF748003738F5 /* ElectricityPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1B2EAB2C2DF748003738F5 /* ElectricityPrice.swift */; };
+		0B1B2EAF2C2DF81D003738F5 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1B2EAE2C2DF81D003738F5 /* ApiService.swift */; };
+		0B1B2EB22C2DF937003738F5 /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1B2EB12C2DF937003738F5 /* ChartViewModel.swift */; };
+		0B1B2EB42C2DFD8B003738F5 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1B2EB32C2DFD8B003738F5 /* ContentViewModel.swift */; };
 		0BD234BA2C1650D70004482A /* KwhAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD234B92C1650D70004482A /* KwhAppApp.swift */; };
 		0BD234BC2C1650D70004482A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD234BB2C1650D70004482A /* ContentView.swift */; };
 		0BD234BE2C1650D90004482A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BD234BD2C1650D90004482A /* Assets.xcassets */; };
@@ -16,8 +20,7 @@
 		0BD234D72C1650D90004482A /* KwhAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD234D62C1650D90004482A /* KwhAppUITestsLaunchTests.swift */; };
 		0BE3D7342C28A48600D4826F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE3D7332C28A48600D4826F /* MainView.swift */; };
 		0BE3D7362C28A5D900D4826F /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE3D7352C28A5D900D4826F /* SecondView.swift */; };
-		0BE3D73A2C28B98F00D4826F /* ChartVista.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE3D7392C28B98F00D4826F /* ChartVista.swift */; };
-		0BFA55FB2C25F11600167678 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFA55FA2C25F11600167678 /* ApiService.swift */; };
+		0BE3D73A2C28B98F00D4826F /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE3D7392C28B98F00D4826F /* ChartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B1B2EAB2C2DF748003738F5 /* ElectricityPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectricityPrice.swift; sourceTree = "<group>"; };
+		0B1B2EAE2C2DF81D003738F5 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		0B1B2EB12C2DF937003738F5 /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
+		0B1B2EB32C2DFD8B003738F5 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		0BD234B62C1650D70004482A /* KwhApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KwhApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BD234B92C1650D70004482A /* KwhAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KwhAppApp.swift; sourceTree = "<group>"; };
 		0BD234BB2C1650D70004482A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -50,8 +57,7 @@
 		0BD234D62C1650D90004482A /* KwhAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KwhAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0BE3D7332C28A48600D4826F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		0BE3D7352C28A5D900D4826F /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
-		0BE3D7392C28B98F00D4826F /* ChartVista.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartVista.swift; sourceTree = "<group>"; };
-		0BFA55FA2C25F11600167678 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		0BE3D7392C28B98F00D4826F /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B1B2EAA2C2DF6ED003738F5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0B1B2EAB2C2DF748003738F5 /* ElectricityPrice.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0B1B2EAD2C2DF7B3003738F5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0B1B2EAE2C2DF81D003738F5 /* ApiService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		0B1B2EB02C2DF8A6003738F5 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0B1B2EB12C2DF937003738F5 /* ChartViewModel.swift */,
+				0B1B2EB32C2DFD8B003738F5 /* ContentViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		0BD234AD2C1650D70004482A = {
 			isa = PBXGroup;
 			children = (
@@ -102,12 +133,13 @@
 		0BD234B82C1650D70004482A /* KwhApp */ = {
 			isa = PBXGroup;
 			children = (
-				0BD234B92C1650D70004482A /* KwhAppApp.swift */,
-				0BE3D7382C28B96F00D4826F /* Vistas */,
+				0B1B2EAA2C2DF6ED003738F5 /* Models */,
+				0B1B2EAD2C2DF7B3003738F5 /* Services */,
+				0B1B2EB02C2DF8A6003738F5 /* ViewModels */,
+				0BE3D7382C28B96F00D4826F /* Views */,
 				0BD234BD2C1650D90004482A /* Assets.xcassets */,
 				0BD234BF2C1650D90004482A /* Preview Content */,
-				0BE3D7372C28A75C00D4826F /* PrecioApi */,
-				0BE3D7352C28A5D900D4826F /* SecondView.swift */,
+				0BD234B92C1650D70004482A /* KwhAppApp.swift */,
 			);
 			path = KwhApp;
 			sourceTree = "<group>";
@@ -137,22 +169,15 @@
 			path = KwhAppUITests;
 			sourceTree = "<group>";
 		};
-		0BE3D7372C28A75C00D4826F /* PrecioApi */ = {
+		0BE3D7382C28B96F00D4826F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0BFA55FA2C25F11600167678 /* ApiService.swift */,
-			);
-			path = PrecioApi;
-			sourceTree = "<group>";
-		};
-		0BE3D7382C28B96F00D4826F /* Vistas */ = {
-			isa = PBXGroup;
-			children = (
-				0BE3D7392C28B98F00D4826F /* ChartVista.swift */,
+				0BE3D7392C28B98F00D4826F /* ChartView.swift */,
 				0BD234BB2C1650D70004482A /* ContentView.swift */,
 				0BE3D7332C28A48600D4826F /* MainView.swift */,
+				0BE3D7352C28A5D900D4826F /* SecondView.swift */,
 			);
-			path = Vistas;
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,11 +310,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BFA55FB2C25F11600167678 /* ApiService.swift in Sources */,
 				0BE3D7362C28A5D900D4826F /* SecondView.swift in Sources */,
+				0B1B2EAC2C2DF748003738F5 /* ElectricityPrice.swift in Sources */,
 				0BE3D7342C28A48600D4826F /* MainView.swift in Sources */,
 				0BD234BC2C1650D70004482A /* ContentView.swift in Sources */,
-				0BE3D73A2C28B98F00D4826F /* ChartVista.swift in Sources */,
+				0BE3D73A2C28B98F00D4826F /* ChartView.swift in Sources */,
+				0B1B2EB42C2DFD8B003738F5 /* ContentViewModel.swift in Sources */,
+				0B1B2EB22C2DF937003738F5 /* ChartViewModel.swift in Sources */,
+				0B1B2EAF2C2DF81D003738F5 /* ApiService.swift in Sources */,
 				0BD234BA2C1650D70004482A /* KwhAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
