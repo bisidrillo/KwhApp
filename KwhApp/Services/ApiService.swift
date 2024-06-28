@@ -7,11 +7,9 @@
 
 import Foundation
 
-
 class ApiService {
-    
     static func fetchElectricityPrice(completion: @escaping (Result<[ElectricityPrice], Error>) -> Void) {
-        guard let url = URL(string: "https://api.preciodelaluz.org/v1/prices/all?zone=PCB") else {
+        guard let url = URL(string: "https://apidatos.ree.es/es/datos/mercados/precios-mercados-tiempo-real?start_date=2024-06-28T00:00&end_date=2024-06-28T23:59&time_trunc=hour&geo_limit=ccaa&geo_ids=8742") else {
             completion(.failure(NSError(domain: "URL no válida", code: -1, userInfo: nil)))
             return
         }
@@ -31,18 +29,22 @@ class ApiService {
                 
                 do {
                     let decoder = JSONDecoder()
-                    let rawResponse = try decoder.decode([String: ElectricityPrice].self, from: data)
-                    let pricesResponse = rawResponse.map { (key, value) -> ElectricityPrice in
-                        var updatedValue = value
-                        updatedValue.hour = key
-                        return updatedValue
-                    }
-                    completion(.success(pricesResponse))
-                } catch {
-                    completion(.failure(error))
-                }
-            }
-        }
-        task.resume()
+                                        decoder.keyDecodingStrategy = .convertFromSnakeCase
+                                        let rawResponse = try decoder.decode(RawElectricityPriceResponse.self, from: data)
+                                        guard let included = rawResponse.included.first else {
+                                            completion(.failure(NSError(domain: "No data included", code: -1, userInfo: nil)))
+                                            return
+                                        }
+                                        let pricesResponse = included.attributes.values.map {
+                                            ElectricityPrice(date: $0.datetime, pricePerKWh: $0.value / 1000, color: included.attributes.color) // Asigna el color
+                                        }
+                    print(pricesResponse) // Agrega esto para depurar los precios y colores
+                                        completion(.success(pricesResponse))
+                                    } catch {
+                                        completion(.failure(error))
+                                    }
+                                }
+                            }
+                            task.resume()
     }
 }

@@ -12,16 +12,14 @@ struct ContentView: View {
                 } else {
                     List(viewModel.electricityPrices.sorted(by: { $0.hour < $1.hour }), id: \.id) { price in
                         HStack {
-                            Image(systemName: "eurosign.arrow.trianglehead.counterclockwise.rotate.90")
+                            Image(systemName: "eurosign.circle")
                                 .resizable()
-                                .frame(width: 20, height: 18)
-                                .foregroundColor(iconColor(for: price.priceLevel))
+                                .frame(width: 20, height: 20)
+                                .foregroundColor(Color(hex: price.color)) // Usa la propiedad color
                             VStack(alignment: .leading) {
                                 Text("Hora: \(price.hour)")
                                     .font(.headline)
                                 Text("Precio: \(price.pricePerKWh, specifier: "%.3f") €/kWh")
-                                    .font(.subheadline)
-                                Text("Es barato: \(price.isCheap ? "Sí" : "No")")
                                     .font(.subheadline)
                             }
                             .padding()
@@ -33,19 +31,6 @@ struct ContentView: View {
             .onAppear {
                 viewModel.fetchElectricityPrice()
             }
-        }
-    }
-
-    func iconColor(for priceLevel: String) -> Color {
-        switch priceLevel {
-        case "cheap":
-            return .green
-        case "medium":
-            return .yellow
-        case "expensive":
-            return .red
-        default:
-            return .gray
         }
     }
 }

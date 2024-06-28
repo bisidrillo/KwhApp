@@ -7,26 +7,42 @@
 
 import Foundation
 
-struct ElectricityPrice: Codable, Identifiable {
-    var id: String { date + hour }
+struct ElectricityPrice: Identifiable {
+    var id: String { date }
     let date: String
-    var hour: String
-    let isCheap: Bool
-    let isUnderAvg: Bool
-    let market: String
-    let price: Double
-    let units: String
+    let pricePerKWh: Double
+    let color: String // Se añade la propiedad color
     
-    private enum CodingKeys: String, CodingKey {
-        case date, hour, market, price, units
-        case isCheap = "is-cheap"
-        case isUnderAvg = "is-under-avg"
+    // Propiedad computada para determinar si el precio es barato
+    var isCheap: Bool {
+        return pricePerKWh < 0.1
     }
     
-    var pricePerKWh: Double {
-        return price / 1000
+    // Propiedad computada para extraer la hora de la cadena datetime
+    var hour: String {
+        let dateFormatter = DateFormatter() // Utiliza DateFormatter para convertir la cadena datetime
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX" // Configura el formato ISO 860
+        if let date = dateFormatter.date(from: self.date) {
+            let calendar = Calendar.current
+            let hourComponent = calendar.component(.hour, from: date)
+            return String(format: "%02d:00", hourComponent)
+        }
+        return "N/A" // Devuelve "N/A" si no se puede convertir la fecha
     }
     
+    // Método para formatear la cadena datetime a un formato deseado
+    func formattedDate(format: String) -> String {
+        let dateFormatter = DateFormatter() // Utiliza DateFormatter para convertir la cadena datetime
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX" // Configura el formato ISO 8601
+        if let date = dateFormatter.date(from: self.date) {
+            let formatter = DateFormatter()
+            formatter.dateFormat = format
+            return formatter.string(from: date)
+        }
+        return "N/A" // Devuelve "N/A" si no se puede convertir la fecha
+    }
+    
+    // Propiedad computada para determinar el nivel de precio
     var priceLevel: String {
         if pricePerKWh < 0.1 {
             return "cheap"

@@ -6,28 +6,25 @@
 //
 
 import Foundation
+import Combine
 
 class ChartViewModel: ObservableObject {
     @Published var statusMessage: String = "Conectando a la API..."
-    @Published var electricityPrices: [ChartData] = []
-    @Published var selectedTimeRange: TimeRange = .day
-
-    init() {
-        fetchElectricityPrice()
-    }
-
+    @Published var electricityPrices: [ElectricityPrice] = []
+    
+    private var cancellables = Set<AnyCancellable>()
+    
+    
     func fetchElectricityPrice() {
         ApiService.fetchElectricityPrice { [weak self] result in
-            guard let self = self else { return }
             switch result {
             case .success(let prices):
-                self.electricityPrices = prices.map {
-                    ChartData(hour: $0.hour, price: $0.pricePerKWh)
-                }
-                self.statusMessage = "Datos cargados correctamente"
+                self?.electricityPrices = prices
+                self?.statusMessage = "Datos cargados correctamente"
             case .failure(let error):
-                self.statusMessage = "Error: \(error.localizedDescription)"
+                self?.statusMessage = "Error: \(error.localizedDescription)"
             }
         }
     }
+    
 }

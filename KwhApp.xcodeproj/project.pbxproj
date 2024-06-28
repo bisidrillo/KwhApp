@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B0E19672C2F3459009594E5 /* RawElectricityPriceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0E19662C2F3459009594E5 /* RawElectricityPriceResponse.swift */; };
 		0B1B2EAC2C2DF748003738F5 /* ElectricityPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1B2EAB2C2DF748003738F5 /* ElectricityPrice.swift */; };
 		0B1B2EAF2C2DF81D003738F5 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1B2EAE2C2DF81D003738F5 /* ApiService.swift */; };
 		0B1B2EB22C2DF937003738F5 /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1B2EB12C2DF937003738F5 /* ChartViewModel.swift */; };
@@ -22,6 +23,7 @@
 		0BE3D7342C28A48600D4826F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE3D7332C28A48600D4826F /* MainView.swift */; };
 		0BE3D7362C28A5D900D4826F /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE3D7352C28A5D900D4826F /* SecondView.swift */; };
 		0BE3D73A2C28B98F00D4826F /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE3D7392C28B98F00D4826F /* ChartView.swift */; };
+		0BFAB9D12C2F7A330041DDC4 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFAB9D02C2F7A330041DDC4 /* Color+Hex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B0E19662C2F3459009594E5 /* RawElectricityPriceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawElectricityPriceResponse.swift; sourceTree = "<group>"; };
 		0B1B2EAB2C2DF748003738F5 /* ElectricityPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectricityPrice.swift; sourceTree = "<group>"; };
 		0B1B2EAE2C2DF81D003738F5 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		0B1B2EB12C2DF937003738F5 /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
@@ -60,6 +63,7 @@
 		0BE3D7332C28A48600D4826F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		0BE3D7352C28A5D900D4826F /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
 		0BE3D7392C28B98F00D4826F /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		0BFAB9D02C2F7A330041DDC4 /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				0B1B2EAB2C2DF748003738F5 /* ElectricityPrice.swift */,
+				0B0E19662C2F3459009594E5 /* RawElectricityPriceResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -106,8 +111,8 @@
 		0B1B2EB02C2DF8A6003738F5 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				0B1B2EB12C2DF937003738F5 /* ChartViewModel.swift */,
 				0B1B2EB32C2DFD8B003738F5 /* ContentViewModel.swift */,
+				0B1B2EB12C2DF937003738F5 /* ChartViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -141,6 +146,7 @@
 				0B1B2EB02C2DF8A6003738F5 /* ViewModels */,
 				0BE3D7382C28B96F00D4826F /* Views */,
 				0BD234BD2C1650D90004482A /* Assets.xcassets */,
+				0BFAB9D22C2F7A3C0041DDC4 /* Util */,
 				0BD234BF2C1650D90004482A /* Preview Content */,
 				0BD234B92C1650D70004482A /* KwhAppApp.swift */,
 			);
@@ -181,6 +187,14 @@
 				0BE3D7352C28A5D900D4826F /* SecondView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		0BFAB9D22C2F7A3C0041DDC4 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				0BFAB9D02C2F7A330041DDC4 /* Color+Hex.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BE3D7362C28A5D900D4826F /* SecondView.swift in Sources */,
+				0B0E19672C2F3459009594E5 /* RawElectricityPriceResponse.swift in Sources */,
 				0B1B2EAC2C2DF748003738F5 /* ElectricityPrice.swift in Sources */,
 				0BE3D7342C28A48600D4826F /* MainView.swift in Sources */,
 				0BD234BC2C1650D70004482A /* ContentView.swift in Sources */,
@@ -322,6 +337,7 @@
 				0B1B2EB42C2DFD8B003738F5 /* ContentViewModel.swift in Sources */,
 				0B1B2EB22C2DF937003738F5 /* ChartViewModel.swift in Sources */,
 				0B1B2EAF2C2DF81D003738F5 /* ApiService.swift in Sources */,
+				0BFAB9D12C2F7A330041DDC4 /* Color+Hex.swift in Sources */,
 				0BD234BA2C1650D70004482A /* KwhAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
