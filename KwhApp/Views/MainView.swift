@@ -3,15 +3,20 @@ import SwiftUI
 struct MainView: View {
     var body: some View {
         TabView {
-            ContentView()
+            ContentView(viewModel: ContentViewModel())
                 .tabItem {
                     Image(systemName: "bolt.fill")
                     Text("Precios")
                 }
-            ChartView()
+            ChartView(viewModel: ChartViewModel())
                 .tabItem {
                     Image(systemName: "chart.bar.xaxis")
                     Text("Gráfico")
+                }
+            HoyView(viewModel: HoyViewModel())
+                .tabItem {
+                    Image(systemName: "calendar")
+                    Text("Hoy")
                 }
         }
     }

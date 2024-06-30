@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var viewModel = ContentViewModel()
+    @ObservedObject var viewModel: ContentViewModel // Usar ObservedObject para pasar el ViewModel
 
     var body: some View {
         NavigationView {
@@ -15,11 +15,11 @@ struct ContentView: View {
                             Image(systemName: "eurosign.circle")
                                 .resizable()
                                 .frame(width: 20, height: 20)
-                                .foregroundColor(price.colorPrecio) // Usa la propiedad colorPrecio del modelo
+                                .foregroundColor(viewModel.colorForPrice(price.pricePerKWh)) // Usa la propiedad colorPrecio del modelo
                             VStack(alignment: .leading) {
                                 Text("Hora: \(price.hour)")
                                     .font(.headline)
-                                Text("Precio: \(price.pricePerKWh, specifier: "%.3f") €/kWh")
+                                Text("Precio: \(price.pricePerKWh, specifier: "%.3f") €/kWh") // Mostrar el precio por kWh
                                     .font(.subheadline)
                             }
                             .padding()
@@ -29,7 +29,7 @@ struct ContentView: View {
             }
             .navigationTitle(viewModel.currentDate) // Usar currentDate del viewModel
             .onAppear {
-                viewModel.fetchElectricityPrice()
+                viewModel.fetchElectricityPrice() // Llamar a fetchElectricityPrice cuando la vista aparezca
             }
         }
     }
@@ -37,6 +37,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(viewModel: ContentViewModel()) // Pasar el ViewModel como argumento
     }
 }
