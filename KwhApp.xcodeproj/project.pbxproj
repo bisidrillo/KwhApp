@@ -12,6 +12,7 @@
 		0B1B2EAF2C2DF81D003738F5 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1B2EAE2C2DF81D003738F5 /* ApiService.swift */; };
 		0B1B2EB22C2DF937003738F5 /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1B2EB12C2DF937003738F5 /* ChartViewModel.swift */; };
 		0B1B2EB42C2DFD8B003738F5 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1B2EB32C2DFD8B003738F5 /* ContentViewModel.swift */; };
+		0B1BCF532C31BF5800E4BBC9 /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1BCF522C31BF5800E4BBC9 /* HexColor.swift */; };
 		0BCE9BC92C2E127D00AA9094 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0BCE9BC82C2E127D00AA9094 /* README.md */; };
 		0BD234BA2C1650D70004482A /* KwhAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD234B92C1650D70004482A /* KwhAppApp.swift */; };
 		0BD234BC2C1650D70004482A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD234BB2C1650D70004482A /* ContentView.swift */; };
@@ -23,7 +24,6 @@
 		0BE3D7342C28A48600D4826F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE3D7332C28A48600D4826F /* MainView.swift */; };
 		0BE3D7362C28A5D900D4826F /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE3D7352C28A5D900D4826F /* SecondView.swift */; };
 		0BE3D73A2C28B98F00D4826F /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE3D7392C28B98F00D4826F /* ChartView.swift */; };
-		0BFAB9D12C2F7A330041DDC4 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BFAB9D02C2F7A330041DDC4 /* Color+Hex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +49,7 @@
 		0B1B2EAE2C2DF81D003738F5 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		0B1B2EB12C2DF937003738F5 /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
 		0B1B2EB32C2DFD8B003738F5 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		0B1BCF522C31BF5800E4BBC9 /* HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColor.swift; sourceTree = "<group>"; };
 		0BCE9BC82C2E127D00AA9094 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0BD234B62C1650D70004482A /* KwhApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KwhApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BD234B92C1650D70004482A /* KwhAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KwhAppApp.swift; sourceTree = "<group>"; };
@@ -63,7 +64,6 @@
 		0BE3D7332C28A48600D4826F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		0BE3D7352C28A5D900D4826F /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
 		0BE3D7392C28B98F00D4826F /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
-		0BFAB9D02C2F7A330041DDC4 /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,7 +192,7 @@
 		0BFAB9D22C2F7A3C0041DDC4 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				0BFAB9D02C2F7A330041DDC4 /* Color+Hex.swift */,
+				0B1BCF522C31BF5800E4BBC9 /* HexColor.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -330,6 +330,7 @@
 			files = (
 				0BE3D7362C28A5D900D4826F /* SecondView.swift in Sources */,
 				0B0E19672C2F3459009594E5 /* RawElectricityPriceResponse.swift in Sources */,
+				0B1BCF532C31BF5800E4BBC9 /* HexColor.swift in Sources */,
 				0B1B2EAC2C2DF748003738F5 /* ElectricityPrice.swift in Sources */,
 				0BE3D7342C28A48600D4826F /* MainView.swift in Sources */,
 				0BD234BC2C1650D70004482A /* ContentView.swift in Sources */,
@@ -337,7 +338,6 @@
 				0B1B2EB42C2DFD8B003738F5 /* ContentViewModel.swift in Sources */,
 				0B1B2EB22C2DF937003738F5 /* ChartViewModel.swift in Sources */,
 				0B1B2EAF2C2DF81D003738F5 /* ApiService.swift in Sources */,
-				0BFAB9D12C2F7A330041DDC4 /* Color+Hex.swift in Sources */,
 				0BD234BA2C1650D70004482A /* KwhAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

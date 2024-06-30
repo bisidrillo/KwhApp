@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct ElectricityPrice: Identifiable {
     var id: String { date }
@@ -13,15 +14,22 @@ struct ElectricityPrice: Identifiable {
     let pricePerKWh: Double
     let color: String // Se añade la propiedad color
     
-    // Propiedad computada para determinar si el precio es barato
-    var isCheap: Bool {
-        return pricePerKWh < 0.1
+    // Propiedad computada para determinar el color basado en el precio
+    var colorPrecio: Color {
+        switch pricePerKWh {
+        case 0..<0.1:
+            return .green // Precio más barato
+        case 0..<0.2:
+            return .yellow // Precio medio
+        default:
+            return .red // Precio caro
+        }
     }
     
     // Propiedad computada para extraer la hora de la cadena datetime
     var hour: String {
         let dateFormatter = DateFormatter() // Utiliza DateFormatter para convertir la cadena datetime
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX" // Configura el formato ISO 860
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX" // Configura el formato ISO 8601
         if let date = dateFormatter.date(from: self.date) {
             let calendar = Calendar.current
             let hourComponent = calendar.component(.hour, from: date)
@@ -40,16 +48,5 @@ struct ElectricityPrice: Identifiable {
             return formatter.string(from: date)
         }
         return "N/A" // Devuelve "N/A" si no se puede convertir la fecha
-    }
-    
-    // Propiedad computada para determinar el nivel de precio
-    var priceLevel: String {
-        if pricePerKWh < 0.1 {
-            return "cheap"
-        } else if pricePerKWh < 0.2 {
-            return "medium"
-        } else {
-            return "expensive"
-        }
     }
 }

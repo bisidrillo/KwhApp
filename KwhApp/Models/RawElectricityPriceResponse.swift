@@ -51,7 +51,7 @@ struct RawElectricityPriceResponse: Codable {
     struct IncludedAttributes: Codable {
         let title: String
         let description: String?
-        let color: String // Asegúrate de incluir la propiedad color
+        let color: String
         let type: String?
         let magnitude: String
         let composite: Bool

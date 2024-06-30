@@ -15,7 +15,7 @@ struct ContentView: View {
                             Image(systemName: "eurosign.circle")
                                 .resizable()
                                 .frame(width: 20, height: 20)
-                                .foregroundColor(Color(hex: price.color)) // Usa la propiedad color
+                                .foregroundColor(price.colorPrecio) // Usa la propiedad colorPrecio del modelo
                             VStack(alignment: .leading) {
                                 Text("Hora: \(price.hour)")
                                     .font(.headline)
@@ -27,7 +27,7 @@ struct ContentView: View {
                     }
                 }
             }
-            .navigationTitle(viewModel.electricityPrices.first.map { "\($0.date)" } ?? "Precios de la Luz")
+            .navigationTitle(viewModel.currentDate) // Usar currentDate del viewModel
             .onAppear {
                 viewModel.fetchElectricityPrice()
             }

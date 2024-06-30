@@ -11,10 +11,9 @@ import Combine
 class ChartViewModel: ObservableObject {
     @Published var statusMessage: String = "Conectando a la API..."
     @Published var electricityPrices: [ElectricityPrice] = []
-    
+
     private var cancellables = Set<AnyCancellable>()
-    
-    
+
     func fetchElectricityPrice() {
         ApiService.fetchElectricityPrice { [weak self] result in
             switch result {
@@ -26,5 +25,4 @@ class ChartViewModel: ObservableObject {
             }
         }
     }
-    
 }

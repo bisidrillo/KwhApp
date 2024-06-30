@@ -11,9 +11,16 @@ import Combine
 class ContentViewModel: ObservableObject {
     @Published var electricityPrices: [ElectricityPrice] = []
     @Published var statusMessage: String = "Conectando a la API..."
-    
+    @Published var currentDate: String = ""
+
     private var cancellables = Set<AnyCancellable>()
-    
+
+    init() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        currentDate = dateFormatter.string(from: Date())
+    }
+
     func fetchElectricityPrice() {
         ApiService.fetchElectricityPrice { [weak self] result in
             switch result {
