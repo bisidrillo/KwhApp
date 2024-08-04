@@ -8,6 +8,19 @@ struct ElectricityPrice: Identifiable {
     var timestamp: Date
     let color: String // Se añade la propiedad color
     
+    var colorPrecio: Color {
+        switch pricePerKWh {
+        case 0..<0.1:
+            return Color.green // Precio barato
+        case 0.1..<0.2:
+            return Color.yellow // Precio medio
+        default :
+            return Color.red // Precio caro
+                
+        
+        }
+    }
+    
     // Propiedad computada para extraer la hora de la cadena datetime
     var hour: String {
         let dateFormatter = DateFormatter() // Utiliza DateFormatter para convertir la cadena datetime
