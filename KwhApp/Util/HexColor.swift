@@ -16,7 +16,12 @@ extension Color {
         let a, r, g, b: UInt64
         switch hex.count {
         case 3:
-            (a, r, g, b) = (255, (int >> 8 * 17) & 0xFF, (int >> 4 * 17) & 0xFF, int * 17 & 0xFF)
+            (a, r, g, b) = (
+                255,
+                ((int >> 8) & 0xF) * 17,
+                ((int >> 4) & 0xF) * 17,
+                (int & 0xF) * 17
+            )
         case 6:
             (a, r, g, b) = (255, (int >> 16) & 0xFF, (int >> 8) & 0xFF, int & 0xFF)
         case 8:
